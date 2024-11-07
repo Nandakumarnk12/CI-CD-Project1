@@ -14,7 +14,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 // Checkout code from your GitHub repository
-                git 'https://github.com/Sushmaa123/Java-Springboot.git'
+                git 'https://github.com/Nandakumarnk/CI-CD-Project.git'
             }
         }
         
