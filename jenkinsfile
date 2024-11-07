@@ -14,7 +14,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 // Checkout code from your GitHub repository
-                git 'https://github.com/Nandakumarnk/CI-CD-Project.git'
+                git 'https://github.com/Nandakumarnk/CI-CD-Project1.git'
             }
         }
         
