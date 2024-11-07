@@ -2,14 +2,11 @@ def COLOR_MAP = [
     'SUCCESS': 'good',
     'FAILURE': 'danger'
 ]
-
 pipeline {
     agent any
-    
     environment {
         SCANNER_HOME = tool 'sonarqube'
     }
-    
     stages {
         stage('Git Checkout') {
             steps {
@@ -45,15 +42,19 @@ pipeline {
         
         stage('Docker Build') {
             steps {
+            script {
                 // Build the Docker image for your Spring Boot application
                 sh 'docker build -t spring-boot1 .'
+                 } 
             }
         }
         
         stage('Docker Run') {
             steps {
+            script {
                 // Run the Docker container
                 sh 'docker run -itd -p 8091:8091 spring-boot1'
+               }
             }
         }
     }
